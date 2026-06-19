@@ -1,44 +1,61 @@
-const observer = new IntersectionObserver((entries) => {
+/* ── SCROLL REVEAL ── */
+const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
+    if (!entry.isIntersecting) {
+      entry.target.classList.remove('visible');
+      return;
+    }
+    const delay = parseInt(entry.target.dataset.delay || 0);
+    setTimeout(() => entry.target.classList.add('visible'), delay);
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+}, { rootMargin: '-5% 0px -8% 0px' });
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
+/* ── ACTIVE NAV ── */
+const navLinks = document.querySelectorAll('.sidebar-nav a[href^="#"], .mob-nav a[href^="#"]');
 
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(section => {
-    if (window.scrollY >= section.offsetTop - 200) {
-      current = section.getAttribute('id');
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
+      });
     }
   });
-  navLinks.forEach(a => {
-    a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent2)' : '';
+}, { rootMargin: '-10% 0px -80% 0px' });
+
+document.querySelectorAll('section[id]').forEach(el => sectionObserver.observe(el));
+
+/* ── MOBILE NAV ── */
+const mobToggle = document.getElementById('mobToggle');
+const mobNav    = document.getElementById('mobNav');
+
+if (mobToggle && mobNav) {
+  mobToggle.addEventListener('click', () => mobNav.classList.toggle('open'));
+  mobNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => mobNav.classList.remove('open'));
   });
-});
+}
 
-let currentLang = 'es';
-
-const langBtn = document.getElementById('langBtn');
+/* ── LANGUAGE SWITCHER ── */
+let currentLang = 'en';
+const langBtns  = document.querySelectorAll('.lang-btn');
 
 function setLanguage(lang) {
   currentLang = lang;
-
   document.querySelectorAll('[data-es][data-en]').forEach(el => {
     const text = el.getAttribute('data-' + lang);
     if (text) el.innerHTML = text;
   });
-
   document.documentElement.lang = lang;
-
-  langBtn.textContent = lang === 'es' ? 'EN' : 'ES';
-  langBtn.setAttribute('aria-label', lang === 'es' ? 'Switch to English' : 'Cambiar a Español');
+  langBtns.forEach(btn => {
+    btn.textContent = lang === 'es' ? 'EN' : 'ES';
+  });
 }
 
-langBtn.addEventListener('click', () => {
-  setLanguage(currentLang === 'es' ? 'en' : 'es');
+setLanguage('en');
+
+langBtns.forEach(btn => {
+  btn.addEventListener('click', () => setLanguage(currentLang === 'es' ? 'en' : 'es'));
 });
