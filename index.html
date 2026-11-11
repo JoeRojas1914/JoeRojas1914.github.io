@@ -1,266 +1,261 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jorge Ángel Rojas Martínez — Systems Engineer</title>
+  <title>Jorge Ángel Rojas Martínez</title>
+  <meta name="description" content="Jorge Ángel Rojas Martínez, Purchasing Systems Analyst and Intelligent Systems Engineer in San Luis Potosí, Mexico. SAP Ariba, Procure-to-Pay, and full-stack development with Python, PHP, and MySQL.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://joerojas1914.github.io/">
+  <meta property="og:title" content="Jorge Ángel Rojas Martínez, Purchasing Systems Analyst">
+  <meta property="og:description" content="SAP Ariba and Procure-to-Pay specialist at Atmus Filtration Technologies. Full-stack developer with Python, PHP, and MySQL.">
+  <meta property="og:image" content="https://joerojas1914.github.io/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Jorge Ángel Rojas Martínez, Purchasing Systems Analyst">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_MX">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://joerojas1914.github.io/">
+  <meta name="color-scheme" content="light dark">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script>
+    (function () {
+      var root = document.documentElement, saved = null;
+      root.classList.add('js');
+      try { saved = localStorage.getItem('theme'); } catch (e) {}
+      var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      root.setAttribute('data-theme', dark ? 'dark' : 'light');
+    })();
+  </script>
 </head>
 <body>
 
-<!-- ══ MOBILE BAR ══ -->
-<div class="mobile-bar">
-  <span class="mob-logo">Jorge Rojas</span>
-  <div class="mob-right">
-    <button class="lang-btn" aria-label="Switch language">EN</button>
-    <button class="mob-toggle" id="mobToggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
+<nav class="topnav" id="topnav" aria-label="Sections">
+  <div class="topnav-inner">
+    <a class="topnav-name" href="#top">Jorge Rojas</a>
+    <div class="topnav-links">
+      <a href="#experiencia" data-es="Experiencia" data-en="Experience">Experience</a>
+      <a href="#proyectos"   data-es="Proyectos"   data-en="Projects">Projects</a>
+      <a href="#educacion"   data-es="Educación"   data-en="Education">Education</a>
+      <a href="#habilidades" data-es="Habilidades" data-en="Skills">Skills</a>
+    </div>
+    <div class="tools">
+      <button class="theme-btn theme-btn--nav" type="button" aria-label="Cambiar tema"><svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      <button class="lang-btn lang-btn--nav" type="button" aria-label="Cambiar a español">ES</button>
+    </div>
   </div>
-</div>
-
-<!-- ══ MOBILE NAV ══ -->
-<nav class="mob-nav" id="mobNav">
-  <a href="#perfil"      data-es="Perfil"      data-en="Profile">Perfil</a>
-  <a href="#proyectos"   data-es="Proyectos"   data-en="Projects">Proyectos</a>
-  <a href="#experiencia" data-es="Experiencia" data-en="Experience">Experiencia</a>
-  <a href="#estudios"    data-es="Estudios"    data-en="Education">Estudios</a>
-  <a href="#contacto"    data-es="Contacto"    data-en="Contact">Contacto</a>
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
 </nav>
 
-<!-- ══ LAYOUT ══ -->
-<div class="wrapper">
-
-  <!-- ── SIDEBAR ── -->
-  <aside class="sidebar">
-    <div class="sidebar-top">
-      <div class="sidebar-name">
-        <span class="name-light">Jorge Ángel</span>
-        <span class="name-bold">Rojas Martínez<span class="name-dot">.</span></span>
-      </div>
-      <div class="sidebar-meta">
-        <span class="available-tag" data-es="Disponible" data-en="Available">Disponible</span>
-        <span class="meta-item" data-es="Ing. en Sistemas Inteligentes" data-en="Intelligent Systems Engineer">Ing. en Sistemas Inteligentes</span>
-        <span class="meta-item">San Luis Potosí, MX</span>
-      </div>
+<header class="band" id="top">
+  <svg class="blueprint" viewBox="0 0 1200 500" preserveAspectRatio="xMaxYMid slice" aria-hidden="true" focusable="false">
+    <g class="bp-lines">
+      <path d="M700 80 H860"/>
+      <path d="M860 80 H960 V140 H1020"/>
+      <path d="M700 80 V220 H760"/>
+      <path d="M760 220 H880 V260 H940"/>
+      <path d="M1020 140 V300 H1120"/>
+      <path d="M940 260 V380 H820"/>
+      <path d="M940 260 H1000 V420 H1040"/>
+      <path d="M560 320 H690 V220 H760"/>
+      <path d="M1180 60 H1100 V140 H1020"/>
+      <path d="M1120 300 V420 H1040"/>
+      <path d="M820 380 H640 V450"/>
+      <path d="M480 140 H600 V80 H700"/>
+    </g>
+    <g class="bp-signal">
+      <path d="M860 80 H960 V140 H1020" pathLength="100" style="--delay:0s"/>
+      <path d="M760 220 H880 V260 H940" pathLength="100" style="--delay:1.6s"/>
+      <path d="M1020 140 V300 H1120" pathLength="100" style="--delay:3.1s"/>
+      <path d="M940 260 H1000 V420 H1040" pathLength="100" style="--delay:0.8s"/>
+      <path d="M560 320 H690 V220 H760" pathLength="100" style="--delay:2.4s"/>
+      <path d="M1180 60 H1100 V140 H1020" pathLength="100" style="--delay:4s"/>
+      <path d="M480 140 H600 V80 H700" pathLength="100" style="--delay:1.2s"/>
+    </g>
+    <g class="bp-nodes">
+      <rect class="bp-hub" x="691" y="74" width="18" height="12" rx="2" style="--delay:0.0s"/>
+      <circle cx="860" cy="80" r="3.5"/>
+      <rect class="bp-hub" x="1011" y="134" width="18" height="12" rx="2" style="--delay:1.4s"/>
+      <circle cx="760" cy="220" r="3.5"/>
+      <rect class="bp-hub" x="931" y="254" width="18" height="12" rx="2" style="--delay:2.8s"/>
+      <circle cx="1120" cy="300" r="3.5"/>
+      <circle cx="820" cy="380" r="3.5"/>
+      <circle cx="1040" cy="420" r="3.5"/>
+      <circle cx="560" cy="320" r="3.5"/>
+      <circle cx="1180" cy="60" r="3.5"/>
+      <circle cx="640" cy="450" r="3.5"/>
+      <circle cx="480" cy="140" r="3.5"/>
+    </g>
+  </svg>
+  <div class="band-inner">
+  <div class="tools band-tools">
+    <button class="theme-btn" type="button" aria-label="Cambiar tema"><svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+    <button class="lang-btn" type="button" aria-label="Cambiar a español">ES</button>
+  </div>
+  <div class="intro">
+    <div class="intro-id rise" style="--i:0">
+    <img src="avatar.jpg" alt="Jorge Ángel Rojas Martínez" class="avatar" width="128" height="128">
+    <h1 class="name">Jorge Ángel Rojas Martínez</h1>
+    <p class="role">
+      <span class="rotator" id="rotator">
+        <span class="rotator-item is-active" data-es="Purchasing Systems Analyst en Atmus Filtration Technologies" data-en="Purchasing Systems Analyst at Atmus Filtration Technologies">Purchasing Systems Analyst at Atmus Filtration Technologies</span>
+        <span class="rotator-item" data-es="Desarrollador full-stack con Python, PHP y MySQL" data-en="Full-stack developer with Python, PHP, and MySQL">Full-stack developer with Python, PHP, and MySQL</span>
+      </span>
+    </p>
+    <p class="status"><span class="dot" aria-hidden="true"></span><span data-es="San Luis Potosí, México. Abierto a nuevas oportunidades." data-en="San Luis Potosí, Mexico. Open to new opportunities.">San Luis Potosí, Mexico. Open to new opportunities.</span></p>
     </div>
 
-    <nav class="sidebar-nav">
-      <a href="#perfil"      data-es="Perfil"      data-en="Profile">Perfil</a>
-      <a href="#proyectos"   data-es="Proyectos"   data-en="Projects">Proyectos</a>
-      <a href="#experiencia" data-es="Experiencia" data-en="Experience">Experiencia</a>
-      <a href="#estudios"    data-es="Estudios"    data-en="Education">Estudios</a>
-      <a href="#contacto"    data-es="Contacto"    data-en="Contact">Contacto</a>
-    </nav>
+    <div class="intro-about rise" style="--i:1">
+    <p class="summary" data-es="Ingeniero en Sistemas Inteligentes con dos años de experiencia en sistemas de compras para un fabricante global. Soy la persona de referencia de SAP Ariba en mi sitio: resuelvo tickets de nivel 2, administro datos maestros de proveedores, capacito a usuarios de todo el mundo y escribo los procedimientos del proceso Procure-to-Pay. También desarrollo software full-stack con Python (Flask), PHP (Laravel) y MySQL." data-en="Intelligent Systems Engineer with two years of experience supporting procurement systems at a global manufacturer. I'm my site's go-to person for SAP Ariba: I resolve level 2 tickets, manage supplier master data, train users worldwide, and write the procedures for the Procure-to-Pay process. I'm also a full-stack developer working with Python (Flask), PHP (Laravel), and MySQL.">Intelligent Systems Engineer with two years of experience supporting procurement systems at a global manufacturer. I'm my site's go-to person for SAP Ariba: I resolve level 2 tickets, manage supplier master data, train users worldwide, and write the procedures for the Procure-to-Pay process. I'm also a full-stack developer working with Python (Flask), PHP (Laravel), and MySQL.</p>
 
-    <div class="sidebar-bottom">
-      <button class="lang-btn" aria-label="Switch language">EN</button>
-      <div class="sidebar-social">
-        <a href="https://linkedin.com/in/jorge-ángel-rojas-martínez-12292a31b" target="_blank" class="social-link">LinkedIn ↗</a>
-        <a href="https://github.com/JoeRojas1914" target="_blank" class="social-link">GitHub ↗</a>
-      </div>
-      <span class="sidebar-copy" data-es="© 2026 Jorge Ángel Rojas Martínez" data-en="© 2026 Jorge Ángel Rojas Martínez">© 2026 Jorge Ángel Rojas Martínez</span>
+    <ul class="contact">
+      <li><a class="pill pill--solid js-copy" href="mailto:jorgeangelrojasmtz@gmail.com">jorgeangelrojasmtz@gmail.com</a></li>
+      <li><a class="pill" href="https://linkedin.com/in/jorge-ángel-rojas-martínez-12292a31b" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a class="pill" href="https://github.com/JoeRojas1914" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
     </div>
-  </aside>
+  </div>
+  </div>
+</header>
 
-  <!-- ── CONTENT ── -->
-  <main class="content">
+<div class="page">
 
-    <!-- PERFIL -->
-    <section class="section" id="perfil">
-      <div class="section-head reveal">
-        <span class="section-label" data-es="Perfil" data-en="Profile">Perfil</span>
-      </div>
-      <!-- Bio -->
-      <div class="about-bio">
-        <div class="profile-photo-wrap reveal" data-delay="100">
-          <img src="profile.JPG" alt="Jorge Ángel Rojas Martínez" class="profile-photo">
-        </div>
-        <div class="profile-text reveal" data-delay="200">
-          <p class="profile-lead" data-es="Ingeniero en Sistemas Inteligentes enfocado en desarrollo web fullstack y sistemas empresariales." data-en="Intelligent Systems Engineer focused on full-stack web development and enterprise systems.">Ingeniero en Sistemas Inteligentes enfocado en desarrollo web fullstack y sistemas empresariales.</p>
-          <p data-es="Actualmente trabajo como Analista de Sistemas en Atmus Filtration Technologies, donde doy soporte a usuarios de SAP Ariba a nivel mundial, resuelvo tickets mediante procesos ITSM y lidero mejoras de sistemas de principio a fin. En paralelo, desarrollo y mantengo aplicaciones web en producción — incluyendo Fresh Steps, un sistema de ventas y operaciones activo para un cliente real." data-en="I currently work as a Systems Analyst at Atmus Filtration Technologies, where I support SAP Ariba users worldwide, resolve tickets through ITSM processes, and drive system improvements end-to-end. In parallel, I build and maintain production web applications — including Fresh Steps, a sales and operations system running live for a real client.">Actualmente trabajo como Analista de Sistemas en Atmus Filtration Technologies, donde doy soporte a usuarios de SAP Ariba a nivel mundial, resuelvo tickets mediante procesos ITSM y lidero mejoras de sistemas de principio a fin. En paralelo, desarrollo y mantengo aplicaciones web en producción — incluyendo Fresh Steps, un sistema de ventas y operaciones activo para un cliente real.</p>
-          <p data-es="Mi stack principal es Python (Flask, FastAPI), JavaScript (React, Node.js) y PHP (Laravel), con MySQL y SQLite en el lado de datos. Disfruto proyectos que conectan procesos de negocio con software, desde sistemas de gestión hasta proyectos personales." data-en="My main stack is Python (Flask, FastAPI), JavaScript (React, Node.js), and PHP (Laravel), with MySQL and SQLite on the data side. I enjoy projects that connect business processes with software, from management systems to personal projects.">Mi stack principal es Python (Flask, FastAPI), JavaScript (React, Node.js) y PHP (Laravel), con MySQL y SQLite en el lado de datos. Disfruto proyectos que conectan procesos de negocio con software, desde sistemas de gestión hasta proyectos personales.</p>
-          <p data-es="Siempre aprendiendo, siempre construyendo. Abierto a oportunidades en desarrollo de software e ingeniería de sistemas." data-en="Always learning, always building. Open to opportunities in software development and systems engineering.">Siempre aprendiendo, siempre construyendo. Abierto a oportunidades en desarrollo de software e ingeniería de sistemas.</p>
-        </div>
-      </div>
+  <main>
 
-      <!-- Skills -->
-      <div class="skills-grid reveal" data-delay="150">
-        <div class="skill-group">
-          <span class="skill-cat" data-es="Lenguajes" data-en="Languages">Lenguajes</span>
-          <div class="skill-tags-row">
-            <span class="skill-tag">PHP</span>
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">SQL</span>
+    <section class="block" id="experiencia" aria-labelledby="h-exp">
+      <h2 class="reveal" id="h-exp" data-es="Experiencia" data-en="Experience">Experience</h2>
+      <div class="block-body">
+
+        <article class="entry reveal">
+          <div class="entry-head">
+            <h3>Purchasing Systems Analyst</h3>
+            <p class="date" data-es="Nov 2025 – hoy" data-en="Nov 2025 – present">Nov 2025 – present</p>
           </div>
-        </div>
-        <div class="skill-group">
-          <span class="skill-cat">Web & Frameworks</span>
-          <div class="skill-tags-row">
-            <span class="skill-tag">HTML / CSS</span>
-            <span class="skill-tag">Flask</span>
-            <span class="skill-tag">FastAPI</span>
-            <span class="skill-tag">React</span>
-            <span class="skill-tag">Laravel</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <span class="skill-cat" data-es="Sistemas Empresariales" data-en="Enterprise Systems">Sistemas Empresariales</span>
-          <div class="skill-tags-row">
-            <span class="skill-tag">SAP Ariba</span>
-            <span class="skill-tag">ITSM (AskMe)</span>
-            <span class="skill-tag">SharePoint</span>
-            <span class="skill-tag">Oracle GIEA</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <span class="skill-cat">Tools</span>
-          <div class="skill-tags-row">
-            <span class="skill-tag">Git / GitHub</span>
-            <span class="skill-tag">Figma</span>
-            <span class="skill-tag">Excel</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <span class="skill-cat" data-es="Idiomas" data-en="Spoken Languages">Idiomas</span>
-          <div class="skill-tags-row">
-            <span class="skill-tag" data-es="Inglés — Avanzado" data-en="English — Advanced">Inglés — Avanzado</span>
-            <span class="skill-tag" data-es="Español — Nativo" data-en="Spanish — Native">Español — Nativo</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROYECTOS -->
-    <section class="section" id="proyectos">
-      <div class="section-head reveal">
-        <span class="section-label" data-es="Proyectos" data-en="Projects">Proyectos</span>
-      </div>
-      <div class="projects-list">
-
-        <a href="https://github.com/JoeRojas1914/Fresh-Steps" target="_blank" class="project-item reveal" data-delay="0">
-          <div class="project-top">
-            <h2 class="project-title" data-es="Fresh Steps" data-en="Fresh Steps">Fresh Steps</h2>
-            <span class="project-arrow">↗</span>
-          </div>
-          <p class="project-desc" data-es="Sistema web de ventas y operaciones para un negocio de limpieza de calzado y sastrería. Gestión de ventas, clientes, gastos y estadísticas con reportes mensuales y totales. Seguimiento detallado por tipo de servicio, materiales, colores y notas personalizadas." data-en="Web-based sales and operations system for a shoe cleaning and tailoring business. Manages sales, clients, expenses, and statistics with monthly and total reports. Detailed item tracking by service type, materials, colors, and custom notes.">Sistema web de ventas y operaciones para un negocio de limpieza de calzado y sastrería. Gestión de ventas, clientes, gastos y estadísticas con reportes mensuales y totales. Seguimiento detallado por tipo de servicio, materiales, colores y notas personalizadas.</p>
-          <span class="project-stack">Flask · Python · MySQL</span>
-        </a>
-
-        <a href="https://github.com/JoeRojas1914/Control-Escolar-Departamento-Fisico-Matematico" target="_blank" class="project-item reveal" data-delay="100">
-          <div class="project-top">
-            <h2 class="project-title" data-es="Sistema de control escolar" data-en="Academic Control System">Sistema de control escolar</h2>
-            <span class="project-arrow">↗</span>
-          </div>
-          <p class="project-desc" data-es="Aplicación web para el Departamento de Física y Matemáticas de la UASLP. Profesores gestionan calificaciones, estadísticas y asistencia; alumnos consultan su desempeño académico; módulo administrativo para grupos, catálogos y configuraciones." data-en="Web application for the Physics and Mathematics Department at UASLP. Professors manage grades, statistics, and attendance; students view academic performance; administrative module for catalogs, groups, and settings.">Aplicación web para el Departamento de Física y Matemáticas de la UASLP. Profesores gestionan calificaciones, estadísticas y asistencia; alumnos consultan su desempeño académico; módulo administrativo para grupos, catálogos y configuraciones.</p>
-          <span class="project-stack">Laravel · PHP · MySQL · JavaScript</span>
-        </a>
-
-
-      </div>
-    </section>
-
-    <!-- EXPERIENCIA -->
-    <section class="section" id="experiencia">
-      <div class="section-head reveal">
-        <span class="section-label" data-es="Experiencia" data-en="Experience">Experiencia</span>
-      </div>
-      <div class="exp-list">
-
-        <div class="exp-entry reveal" data-delay="0">
-          <div class="exp-header">
-            <div class="exp-role">Systems Analyst</div>
-            <div class="exp-date" data-es="Nov 2025 — Presente" data-en="Nov 2025 — Present">Nov 2025 — Presente</div>
-          </div>
-          <div class="exp-company">Atmus Filtration Technologies · San Luis Potosí, MX</div>
-          <ul class="exp-items">
-            <li data-es="Gestión y resolución de tickets, tareas y RITMs en AskMe bajo procesos ITSM internos." data-en="Manage and resolve tickets, tasks, and RITMs in AskMe following internal ITSM processes.">Gestión y resolución de tickets, tareas y RITMs en AskMe bajo procesos ITSM internos.</li>
-            <li data-es="Soporte 1:1 y sesiones de capacitación global mensual para usuarios de SAP Ariba." data-en="Provide 1:1 support and lead monthly global training sessions for SAP Ariba users.">Soporte 1:1 y sesiones de capacitación global mensual para usuarios de SAP Ariba.</li>
-            <li data-es="Identificación de mejoras en sistemas y ejecución end-to-end, desde propuesta hasta implementación." data-en="Identify system improvements and drive them end-to-end, from proposal to implementation.">Identificación de mejoras en sistemas y ejecución end-to-end, desde propuesta hasta implementación.</li>
-            <li data-es="Apoyo en creación de sitios SharePoint, portal de proveedores y SOPs para sistemas de compras." data-en="Support SharePoint site creation, the supplier portal, and SOPs for purchasing systems.">Apoyo en creación de sitios SharePoint, portal de proveedores y SOPs para sistemas de compras.</li>
-            <li data-es="Gestión de accesos a sistemas internos y externos." data-en="Manage internal and external system access.">Gestión de accesos a sistemas internos y externos.</li>
+          <p class="org">Atmus Filtration Technologies</p>
+          <ul class="points">
+            <li data-es="Gestiono y resuelvo tickets, tareas y RITMs en AskMe siguiendo los procesos ITSM internos." data-en="Manage and resolve tickets, tasks, and RITMs in AskMe following internal ITSM processes.">Manage and resolve tickets, tasks, and RITMs in AskMe following internal ITSM processes.</li>
+            <li data-es="Soy la persona de referencia de SAP Ariba en mi sitio: doy soporte 1:1 y dirijo capacitaciones globales mensuales." data-en="Serve as the site&#39;s SAP Ariba go-to, providing 1:1 support and leading monthly global trainings.">Serve as the site&#39;s SAP Ariba go-to, providing 1:1 support and leading monthly global trainings.</li>
+            <li data-es="Administro los datos maestros de proveedores y cuido su exactitud en los sistemas de compras." data-en="Administer supplier master data, ensuring accuracy across purchasing systems.">Administer supplier master data, ensuring accuracy across purchasing systems.</li>
+            <li data-es="Escribo los SOPs de SAP Ariba y apoyo en la creación de sitios de SharePoint y el portal de proveedores." data-en="Author SAP Ariba SOPs and support SharePoint site creation and the supplier portal.">Author SAP Ariba SOPs and support SharePoint site creation and the supplier portal.</li>
+            <li data-es="Desarrollé una herramienta de escritorio en Python que automatiza correos masivos y personalizados a proveedores por Outlook." data-en="Developed a Python desktop tool that automates bulk and personalized supplier emails via Outlook.">Developed a Python desktop tool that automates bulk and personalized supplier emails via Outlook.</li>
+            <li data-es="Identifico mejoras en los sistemas y las llevo de principio a fin, desde la propuesta hasta la implementación." data-en="Identify system improvements and drive them end to end, from proposal to implementation.">Identify system improvements and drive them end to end, from proposal to implementation.</li>
+            <li data-es="Administro accesos y roles de los sistemas de compras, apoyando el cumplimiento de las auditorías internas." data-en="Administer user access and roles for purchasing systems, supporting internal audit compliance.">Administer user access and roles for purchasing systems, supporting internal audit compliance.</li>
           </ul>
-        </div>
+        </article>
 
-        <div class="exp-entry reveal" data-delay="80">
-          <div class="exp-header">
-            <div class="exp-role">Systems Intern — Purchasing</div>
-            <div class="exp-date">Ene 2025 — Nov 2025</div>
+        <article class="entry reveal">
+          <div class="entry-head">
+            <h3 data-es="Practicante de Sistemas de Compras" data-en="Purchasing Systems Intern">Purchasing Systems Intern</h3>
+            <p class="date" data-es="Ene 2025 – Nov 2025" data-en="Jan 2025 – Nov 2025">Jan 2025 – Nov 2025</p>
           </div>
-          <div class="exp-company">Atmus Filtration Technologies · San Luis Potosí, MX</div>
-          <ul class="exp-items">
-            <li data-es="Creación y mejora continua de materiales instructivos multilingüe (español / inglés)." data-en="Created and continuously improved multilingual instructional materials (Spanish / English).">Creación y mejora continua de materiales instructivos multilingüe (español / inglés).</li>
-            <li data-es="Habilitación de proveedores y seguimiento de datos de catálogo." data-en="Supplier enablement and catalog data tracking.">Habilitación de proveedores y seguimiento de datos de catálogo.</li>
-            <li data-es="Resolución de tickets relacionados con errores de sistema e incidencias de usuarios." data-en="Managed and resolved tickets related to system errors and user issues.">Resolución de tickets relacionados con errores de sistema e incidencias de usuarios.</li>
-            <li data-es="Comunicación directa con proveedores internacionales para asegurar cumplimiento y seguimiento." data-en="Communicated with international suppliers to ensure proper follow-up and compliance.">Comunicación directa con proveedores internacionales para asegurar cumplimiento y seguimiento.</li>
-            <li data-es="Participación en auditorías internas de accesos y autorizaciones." data-en="Participated in internal audits reviewing system access and authorization procedures.">Participación en auditorías internas de accesos y autorizaciones.</li>
+          <p class="org">Atmus Filtration Technologies</p>
+          <ul class="points">
+            <li data-es="Participé en la creación y mejora continua de materiales instructivos en varios idiomas." data-en="Contributed to the creation and continuous improvement of multilingual instructional materials.">Contributed to the creation and continuous improvement of multilingual instructional materials.</li>
+            <li data-es="Apoyé la habilitación de proveedores y di seguimiento a los datos de catálogo." data-en="Supported supplier enablement and tracked catalog data.">Supported supplier enablement and tracked catalog data.</li>
+            <li data-es="Me comuniqué con proveedores internacionales y supervisores internos para asegurar el seguimiento y el cumplimiento." data-en="Communicated with international suppliers and internal supervisors to ensure follow-up and compliance.">Communicated with international suppliers and internal supervisors to ensure follow-up and compliance.</li>
+            <li data-es="Participé en auditorías internas revisando accesos a sistemas y documentando los procedimientos de autorización." data-en="Took part in internal audits by reviewing system access and documenting authorization procedures.">Took part in internal audits by reviewing system access and documenting authorization procedures.</li>
           </ul>
-        </div>
-
-        <div class="exp-entry reveal" data-delay="160">
-          <div class="exp-header">
-            <div class="exp-role" data-es="Surtidor de Abarrotes" data-en="Seasonal Grocery Supplier">Surtidor de Abarrotes</div>
-            <div class="exp-date" data-es="Jun 2022 — Ago 2022" data-en="Jun 2022 — Aug 2022">Jun 2022 — Ago 2022</div>
-          </div>
-          <div class="exp-company">Tiendas Soriana S.A. de C.V. · San Luis Potosí, MX</div>
-          <ul class="exp-items">
-            <li data-es="Garanticé el cumplimiento de los estándares de calidad y eficiencia en el departamento de comestibles." data-en="Ensured compliance with quality and efficiency standards in the grocery department.">Garanticé el cumplimiento de los estándares de calidad y eficiencia en el departamento de comestibles.</li>
-            <li data-es="Implementación de la metodología 5S para optimizar organización y disponibilidad de productos." data-en="Implemented the 5S methodology to optimize product organization and availability.">Implementación de la metodología 5S para optimizar organización y disponibilidad de productos.</li>
-          </ul>
-        </div>
+        </article>
 
       </div>
     </section>
 
-    <!-- ESTUDIOS -->
-    <section class="section" id="estudios">
-      <div class="section-head reveal">
-        <span class="section-label" data-es="Estudios" data-en="Education">Estudios</span>
-      </div>
-      <div class="exp-list">
+    <section class="block" id="proyectos" aria-labelledby="h-proj">
+      <h2 class="reveal" id="h-proj" data-es="Proyectos" data-en="Projects">Projects</h2>
+      <div class="block-body">
 
-        <div class="exp-entry reveal" data-delay="0">
-          <div class="exp-header">
-            <div class="exp-role" data-es="B.S. Ingeniería en Sistemas Inteligentes" data-en="B.S. Intelligent Systems Engineering">B.S. Ingeniería en Sistemas Inteligentes</div>
-            <div class="exp-date">Ago 2019 — Jun 2025</div>
+        <article class="project reveal">
+          <div class="project-side">
+            <h3>Fresh Steps</h3>
+            <p class="project-stack">Python, Flask, MySQL</p>
+            <a class="project-link" href="https://github.com/JoeRojas1914/Fresh-Steps" target="_blank" rel="noopener" data-es="Código en GitHub" data-en="Code on GitHub">Code on GitHub</a>
           </div>
-          <div class="exp-company">Universidad Autónoma de San Luis Potosí · UASLP</div>
-        </div>
+          <div class="project-main">
+          <p class="project-desc" data-es="Sistema de ventas y operaciones para un negocio de limpieza de calzado y sastrería." data-en="Sales and operations system for a shoe cleaning and tailoring business.">Sales and operations system for a shoe cleaning and tailoring business.</p>
+          <ul class="points">
+            <li data-es="Diseñé y desarrollé una aplicación web en Flask para manejar ventas, clientes, gastos y estadísticas de los dos negocios." data-en="Designed and built a Flask web app to manage sales, clients, expenses, and statistics for both businesses.">Designed and built a Flask web app to manage sales, clients, expenses, and statistics for both businesses.</li>
+            <li data-es="Modelé una base de datos MySQL relacional con ventas de varios artículos por transacción." data-en="Modeled a relational MySQL database that supports sales with multiple items per transaction.">Modeled a relational MySQL database that supports sales with multiple items per transaction.</li>
+            <li data-es="Cada artículo registra servicio, material, color, marca y notas." data-en="Each item records service, material, color, brand, and notes.">Each item records service, material, color, brand, and notes.</li>
+            <li data-es="Optimicé las consultas de los reportes mensuales y totales." data-en="Optimized the queries behind monthly and all-time reports.">Optimized the queries behind monthly and all-time reports.</li>
+          </ul>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <div class="project-side">
+            <h3 data-es="Control escolar, UASLP" data-en="Academic control system, UASLP">Academic control system, UASLP</h3>
+            <p class="project-state" data-es="Proyecto en equipo" data-en="Team project">Team project</p>
+            <p class="project-stack">PHP, Laravel, MySQL, JavaScript</p>
+            <a class="project-link" href="https://github.com/JoeRojas1914/Control-Escolar-Departamento-Fisico-Matematico" target="_blank" rel="noopener" data-es="Código en GitHub" data-en="Code on GitHub">Code on GitHub</a>
+          </div>
+          <div class="project-main">
+          <p class="project-desc" data-es="Aplicación web para el Departamento de Física y Matemáticas de la UASLP." data-en="Web app for the Department of Physics and Mathematics at UASLP.">Web app for the Department of Physics and Mathematics at UASLP.</p>
+          <ul class="points">
+            <li data-es="Trabajé en frontend, backend y diseño de la base de datos." data-en="Worked on the frontend, backend, and database design.">Worked on the frontend, backend, and database design.</li>
+            <li data-es="Los profesores registran calificaciones, asistencia y estadísticas; los alumnos consultan su desempeño." data-en="Professors record grades, attendance, and statistics; students check their performance.">Professors record grades, attendance, and statistics; students check their performance.</li>
+            <li data-es="Incluye un módulo administrativo para catálogos, grupos y configuración." data-en="Includes an admin module for catalogs, groups, and settings.">Includes an admin module for catalogs, groups, and settings.</li>
+          </ul>
+          </div>
+        </article>
 
       </div>
     </section>
 
-    <!-- CONTACTO -->
-    <section class="section contact-section" id="contacto">
-      <p class="contact-cta reveal" data-es="Hablemos." data-en="Let's talk.">Hablemos.</p>
-      <div class="contact-body reveal" data-delay="100">
-        <div class="contact-items">
-          <div class="contact-item">
-            <span class="contact-lbl">Email</span>
-            <a href="mailto:jorgeangelrojasmtz@gmail.com" class="contact-val">jorgeangelrojasmtz@gmail.com</a>
+    <section class="block" id="educacion" aria-labelledby="h-edu">
+      <h2 class="reveal" id="h-edu" data-es="Educación" data-en="Education">Education</h2>
+      <div class="block-body">
+        <article class="entry reveal">
+          <div class="entry-head">
+            <h3 data-es="Ingeniería en Sistemas Inteligentes" data-en="B.S. in Intelligent Systems Engineering">B.S. in Intelligent Systems Engineering</h3>
+            <p class="date" data-es="Ago 2019 – Jun 2025" data-en="Aug 2019 – Jun 2025">Aug 2019 – Jun 2025</p>
           </div>
-          <div class="contact-item">
-            <span class="contact-lbl" data-es="Teléfono" data-en="Phone">Teléfono</span>
-            <span class="contact-val">444 136 6505</span>
+          <p class="org">Universidad Autónoma de San Luis Potosí</p>
+        </article>
+        <article class="entry reveal">
+          <div class="entry-head">
+            <h3>CCNAv7: Introduction to Networks</h3>
+            <p class="date">Jun 2024</p>
           </div>
-          <div class="contact-item">
-            <span class="contact-lbl" data-es="Ubicación" data-en="Location">Ubicación</span>
-            <span class="contact-val">San Luis Potosí, México</span>
-          </div>
-        </div>
-        <div class="contact-social">
-          <a href="https://linkedin.com/in/jorge-ángel-rojas-martínez-12292a31b" target="_blank" class="social-btn">LinkedIn</a>
-          <a href="https://github.com/JoeRojas1914" target="_blank" class="social-btn">GitHub</a>
-        </div>
+          <p class="org" data-es="Certificación de Cisco Networking Academy" data-en="Cisco Networking Academy certification">Cisco Networking Academy certification</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" id="habilidades" aria-labelledby="h-skills">
+      <h2 class="reveal" id="h-skills" data-es="Habilidades" data-en="Skills">Skills</h2>
+      <div class="block-body">
+        <dl class="skills">
+          <div class="reveal"><dt data-es="Lenguajes" data-en="Programming">Programming</dt><dd><ul class="tags"><li>Python</li><li>PHP</li><li>JavaScript</li><li>SQL</li><li data-es="C/C++ (básico)" data-en="C/C++ (basic)">C/C++ (basic)</li></ul></dd></div>
+          <div class="reveal"><dt data-es="Web, frameworks y bases de datos" data-en="Web, frameworks &amp; databases">Web, frameworks &amp; databases</dt><dd><ul class="tags"><li>HTML</li><li>CSS</li><li>Flask</li><li>Laravel</li><li>MySQL</li></ul></dd></div>
+          <div class="reveal"><dt data-es="Sistemas empresariales" data-en="Enterprise systems">Enterprise systems</dt><dd><ul class="tags"><li>SAP Ariba</li><li>ITSM (AskMe)</li><li>SharePoint</li><li data-es="Oracle GIEA (básico)" data-en="Oracle GIEA (basic)">Oracle GIEA (basic)</li></ul></dd></div>
+          <div class="reveal"><dt data-es="Herramientas" data-en="Tools">Tools</dt><dd><ul class="tags"><li>Git</li><li>GitHub</li><li>Linux</li><li>Figma</li><li data-es="Excel (intermedio)" data-en="Excel (intermediate)">Excel (intermediate)</li></ul></dd></div>
+          <div class="reveal"><dt data-es="Idiomas" data-en="Languages">Languages</dt><dd><ul class="tags"><li data-es="Español (nativo)" data-en="Spanish (native)">Spanish (native)</li><li data-es="Inglés (avanzado)" data-en="English (advanced)">English (advanced)</li></ul></dd></div>
+        </dl>
       </div>
     </section>
 
   </main>
+
+  <footer class="foot reveal">
+    <p data-es="Si tienes una vacante o un proyecto, escríbeme." data-en="Have a role or a project in mind? Email me.">Have a role or a project in mind? Email me.</p>
+    <ul class="foot-links">
+      <li><a class="js-copy" href="mailto:jorgeangelrojasmtz@gmail.com">jorgeangelrojasmtz@gmail.com</a></li>
+      <li><a href="tel:+524441366505">444 136 6505</a></li>
+      <li><a href="https://linkedin.com/in/jorge-ángel-rojas-martínez-12292a31b" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://github.com/JoeRojas1914" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+    <p class="copy">© 2026 Jorge Ángel Rojas Martínez</p>
+  </footer>
+
 </div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="script.js"></script>
 </body>
